@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - PlayerHitbox
+  - Inventory
+  - CraftInventory
+  - Companion1
   layers:
   - Default
   - TransparentFX
