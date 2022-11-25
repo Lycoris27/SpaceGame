@@ -58,3 +58,12 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Custom ignored folders
+SpaceGame/Assets/Graphics/
+SpaceGame/Library/
+SpaceGame/UserSettings/
+SpaceGame/Temp/
+SpaceGame/Logs/
+
+#Corresponding META files
+SpaceGame/Assets/Graphics.meta
