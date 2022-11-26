@@ -12,7 +12,7 @@ public class SelectInv : MonoBehaviour
     
     public FirstPersonController PlayerControl;
 
-    public int DistanceCraft = 4;
+    public int DistanceCraft;
 
     void Start()
     {
@@ -24,6 +24,8 @@ public class SelectInv : MonoBehaviour
         CraftInv.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        DistanceCraft = 4;
     }
 
     void Update()

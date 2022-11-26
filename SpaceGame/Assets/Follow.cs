@@ -8,11 +8,9 @@ public class Follow : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Companion;
-    public GameObject CameraObj;
 
     public Vector3 Dir;
     public NavMeshAgent compAgent;
-    public Rigidbody thisRigid;
 
     public int hearDistance;
 
