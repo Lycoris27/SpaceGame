@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,49 +9,61 @@ public class SelectInv : MonoBehaviour
     public GameObject CraftInv;
     public GameObject CompanionCrafter;
     public GameObject Player;
+    
+    public FirstPersonController PlayerControl;
 
-    private MeshRenderer rendInv;
+    private Canvas rendInv;
 
     public int DistanceCraft = 4;
 
-    //public Vector3 currDist;
-
-    // Start is called before the first frame update
     void Start()
     {
-        CraftInv = GameObject.FindGameObjectWithTag("CraftInventory");
+        CraftInv = GameObject.FindGameObjectWithTag("CraftInventory");   
         CompanionCrafter = GameObject.FindGameObjectWithTag("Companion1");
         Player = GameObject.FindGameObjectWithTag("PlayerHitbox");
+        PlayerControl = GameObject.Find("PlayerCapsule").GetComponent<FirstPersonController>();
 
-        rendInv = CraftInv.GetComponent<MeshRenderer>();
-        rendInv.enabled = false;
+        CraftInv.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(CompanionCrafter)
         {
-            //currDist = Player.transform.position - CompanionCrafter.transform.position;
             if (Vector3.Magnitude(Player.transform.position - CompanionCrafter.transform.position) < DistanceCraft)
             {
                 if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    if (rendInv.enabled)
+                    if (CraftInv.activeInHierarchy)
                     {
-                        rendInv.enabled = false;
+                        exitMenu();
                     }
                     else
                     {
-                        rendInv.enabled = true;
+                        enterMenu();
                     }
                 }
                
             }
-            else
-            {
-                rendInv.enabled = false;
-            }
         }
+    }
+
+    
+    public void exitMenu()
+    {
+        CraftInv.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        PlayerControl.enabled = true;
+    }
+
+    void enterMenu()
+    {
+        CraftInv.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PlayerControl.enabled = false;
     }
 }

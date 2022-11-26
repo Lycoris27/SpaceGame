@@ -18,8 +18,7 @@ public class Follow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {  
         GetComponent<NavMeshAgent>().destination = Player.transform.position;
     }
 }
