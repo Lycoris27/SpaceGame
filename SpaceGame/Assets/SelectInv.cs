@@ -12,8 +12,6 @@ public class SelectInv : MonoBehaviour
     
     public FirstPersonController PlayerControl;
 
-    private Canvas rendInv;
-
     public int DistanceCraft = 4;
 
     void Start()
