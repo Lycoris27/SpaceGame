@@ -9,12 +9,15 @@ using UnityEngine.UI;
 
 public class SelectInv : MonoBehaviour
 {
+    //Inventory Object reference
     private GameObject Inv;
     private RectTransform InvTrans;
 
+    //Crafting Object reference
     private GameObject CraftInv;
     private RectTransform CraftInvTrans;
 
+    //Companion and Player 
     private GameObject CompanionCrafter;
     private GameObject Player;
     private GameObject playerCamera;
@@ -88,7 +91,8 @@ public class SelectInv : MonoBehaviour
                                            InvTrans.position.y + 300 - y * 100, //+ InvTrans.rect.height/2 - 300 - y * 100, 
                                            InvTrans.position.z);
                 slots[x, y] = Instantiate(ISprefab, temp, Quaternion.identity);
-                slots[x, y].transform.parent = Inv.transform;
+                //slots[x, y].transform.parent = Inv.transform;
+                slots[x, y].transform.SetParent(Inv.transform, true);
                 slots[x, y].name = "Slot_" + x + "_" + y;
 
                 int tempX = x, tempY = y; //Need this for it to not reset
@@ -104,7 +108,8 @@ public class SelectInv : MonoBehaviour
                                        InvTrans.position.y - 350,
                                        InvTrans.position.z);
             HotbarSlot[i] = Instantiate(ISprefab, temp, Quaternion.identity);
-            HotbarSlot[i].transform.parent = Inv.transform;
+            //HotbarSlot[i].transform.parent = Inv.transform;
+            HotbarSlot[i].transform.SetParent(Inv.transform, true);
             HotbarSlot[i].name = "Hotbar_" + i;
 
             int tempI = i;
@@ -122,7 +127,8 @@ public class SelectInv : MonoBehaviour
                                        CraftInv.transform.position.y - y * 100,
                                        CraftInv.transform.position.z);
                 CraftingSlots[x, y] = Instantiate(ISprefab, temp, Quaternion.identity);
-                CraftingSlots[x, y].transform.parent = CraftInv.transform;
+                //CraftingSlots[x, y].transform.parent = CraftInv.transform;
+                CraftingSlots[x, y].transform.SetParent(CraftInv.transform, true);
                 CraftingSlots[x, y].name = "CS_" + x + "_" + y;
 
                 int tempX = x, tempY = y;
