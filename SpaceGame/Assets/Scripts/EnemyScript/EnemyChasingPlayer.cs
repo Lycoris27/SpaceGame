@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyChasingPlayer : MonoBehaviour
 {
     private float timer;
     public EnemyVision EnemyVision;
     public NavMeshAgent navMesh;
-    public GameObject
+    public GameObject bingus;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,12 +25,12 @@ public class EnemyChasingPlayer : MonoBehaviour
     {
         if (EnemyVision.canSeePlayer)
         {
-            TrackPlayer();
+            //TrackPlayer();
         }
     }
-    void TrackPlayer()
+    /*void TrackPlayer()
     {
         
-    }
+    }*/
 
 }
