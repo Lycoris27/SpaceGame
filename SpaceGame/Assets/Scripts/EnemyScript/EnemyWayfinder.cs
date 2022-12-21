@@ -18,7 +18,7 @@ public class EnemyWayfinder : MonoBehaviour
         navMesh.SetDestination(waypoints[0].position);
         randomWaypoint = 0;
     }
-    void Update()
+    void Update()  
     {
         if (!EnemyHealth.isInjured)
         {

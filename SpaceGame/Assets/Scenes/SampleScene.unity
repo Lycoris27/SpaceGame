@@ -1189,8 +1189,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1137797717}
     - target: {fileID: 6486362236839412030, guid: 312f9eb18d909774e807b3f3db706b41, type: 3}
+      propertyPath: angle
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486362236839412030, guid: 312f9eb18d909774e807b3f3db706b41, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 960245030}
+    - target: {fileID: 6486362236839412030, guid: 312f9eb18d909774e807b3f3db706b41, type: 3}
+      propertyPath: radius
+      value: 14.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 312f9eb18d909774e807b3f3db706b41, type: 3}
