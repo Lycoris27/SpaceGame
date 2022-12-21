@@ -58,7 +58,7 @@ public class SelectInv : MonoBehaviour
 
         CompanionCrafter = GameObject.FindGameObjectWithTag("Companion1");
         Player = GameObject.FindGameObjectWithTag("PlayerHitbox");
-        PlayerControl = GameObject.Find("PlayerCapsule").GetComponent<FirstPersonController>();
+        PlayerControl = GameObject.Find("PlayerCapsuleEthan").GetComponent<FirstPersonController>();
 
         //Initiate mouse
         Cursor.visible = false;
